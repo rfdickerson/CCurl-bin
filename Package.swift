@@ -13,3 +13,9 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 **/
+
+import Glibc
+
+system("mkdir -p .build/debug")
+system("cp Packages/CCurl-bin-0.0.1/lib/* .build/debug")
+
