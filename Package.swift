@@ -17,5 +17,5 @@
 import Glibc
 
 system("mkdir -p .build/debug")
-system("cp Packages/CCurl-bin-0.0.1/lib/* .build/debug")
+system("cp Packages/CCurl-bin-0.0.2/lib/* .build/debug")
 
