@@ -22,6 +22,6 @@ system("mkdir -p .build/debug")
     system("cp `find Packages/ -type d -name CCurl*`/lib/linux-64/* .build/debug")
     
 #else
-    system("cp Packages/CCurl-bin-0.0.2/lib/darwin/* .build/debug")
+    system("cp `find Packages/ -type d -name CCurl*`/lib/darwin/* .build/debug")
     
 #endif
