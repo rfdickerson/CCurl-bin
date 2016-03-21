@@ -19,7 +19,7 @@ import Glibc
 system("mkdir -p .build/debug")
 
 #if os(Linux)
-    system("cp Packages/CCurl-bin-0.0.2/lib/linux-64/* .build/debug")
+    system("cp `find Packages/ -type d -name CCurl*`/lib/linux-64/* .build/debug")
     
 #else
     system("cp Packages/CCurl-bin-0.0.2/lib/darwin/* .build/debug")
