@@ -17,5 +17,11 @@
 import Glibc
 
 system("mkdir -p .build/debug")
-system("cp Packages/CCurl-bin-0.0.2/lib/* .build/debug")
 
+#if os(Linux)
+    system("cp Packages/CCurl-bin-0.0.2/lib/linux-64/* .build/debug")
+    
+#else
+    system("cp Packages/CCurl-bin-0.0.2/lib/darwin/* .build/debug")
+    
+#endif
