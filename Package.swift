@@ -18,6 +18,21 @@ import Glibc
 
 system("mkdir -p .build/debug")
 
+// search for existing library
+var fp: UnsafeMutablePointer<FILE>
+var path: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.alloc(1024);
+
+fp = popen("find /usr/lib -name libcurl*", "r")
+var count=0
+
+while (fgets(path, 1024, fp) != nil) {
+        count += 1
+}
+
+if count > 2 {
+        // found system library skip copying
+} else {
+
 #if os(Linux)
     system("cp `find Packages/ -type d -name CCurl*`/lib/linux-64/* .build/debug")
     
@@ -25,3 +40,4 @@ system("mkdir -p .build/debug")
     system("cp `find Packages/ -type d -name CCurl*`/lib/darwin/* .build/debug")
     
 #endif
+}
