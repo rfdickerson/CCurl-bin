@@ -22,7 +22,7 @@ system("mkdir -p .build/debug")
 var fp: UnsafeMutablePointer<FILE>
 var path: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.alloc(1024);
 
-fp = popen("find /usr/lib -name \"libcurl*\"", "r")
+fp = popen("find /usr/lib /usr/local/lib -name \"libcurl*\"", "r")
 var count=0
 
 while (fgets(path, 1024, fp) != nil) {
