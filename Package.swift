@@ -14,7 +14,11 @@
 * limitations under the License.
 **/
 
+#if os(Linux)
 import Glibc
+#else
+import Darwin
+#endif
 
 system("mkdir -p .build/debug")
 
