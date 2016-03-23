@@ -20,5 +20,5 @@ import Glibc
 import Darwin
 #endif
 
-system("`find Packages/ -type d -name CCurl*`/buildme.sh")
+system("sh `find Packages/ -type d -name CCurl*`/build.sh")
 

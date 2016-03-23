@@ -1,14 +1,16 @@
 #!/bin/bash
 
+CURL_PKG=`find . Packages/ -type d -name CCurl*`
+
 function Build(){
+    cd $CURL_PKG
     cd curl
-    ./buildconf
-    ./configure --prefix="$PWD/../build"
-    make -j8  
+    ${PWD}/buildconf
+    ${PWD}/configure --prefix="$PWD/../build"
+    /usr/bin/make -j8  
 }
 
 function InstallLibrary() {
-    cd curl
     make install
 }
 
@@ -19,7 +21,9 @@ function CopyDynamicLibrary() {
     cp $PWD/../build/lib/libcurl* ${PWD}/../../.build/debug
 }
 
-BuildConf
+Build
 InstallLibrary
-CopyDynamicLibrary
+
+
+#CopyDynamicLibrary
     
