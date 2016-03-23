@@ -22,5 +22,5 @@ import Darwin
 
 system("mkdir -p .build/debug")
 
-system("cd `find Packages/ -type d -name CCurl*`/curl && ./buildconf && ./configure && make -j8")
+system("cd `find Packages/ -type d -name CCurl*`/curl && ./buildconf && ./configure")
 
