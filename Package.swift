@@ -20,7 +20,5 @@ import Glibc
 import Darwin
 #endif
 
-system("mkdir -p .build/debug")
-
-system("cd `find Packages/ -type d -name CCurl*`/curl && ./buildconf && ./configure")
+system("cd `find Packages/ -type d -name CCurl*`/curl && ./buildme.sh")
 
